@@ -7,6 +7,7 @@ import pandas as pd
 import numpy as np
 import requests
 import datetime as dt
+import time
 
 
 def scrape_all():
@@ -99,6 +100,31 @@ def mars_facts():
 
     # turn the pulled table back into HTML for coding
     return df.to_html()
+
+# def hemi_data():
+
+#     url = 'https://marshemispheres.com/'
+#     hem_soup = soup(html, 'html.parser')
+
+#     items = hem_soup.find('div', {'class':'results'}).find_all('div', {'class','item'})
+
+#     for item in items:
+#         link = item.find('a', {'class':'itemLink'})['href']
+#         full_url = url+link
+#         browser.visit(full_url)
+        
+#         time.sleep(1)
+#         html = browser.html
+#         hem_img_soup = soup(html, 'html.parser')
+        
+#         img = hem_img_soup.find('img', {'class': 'wide-image'})['src']
+#         big_img = url+img
+        
+#         title = hem_img_soup.find('h2',{'class':'title'}).text.split("Enhanced")[0].strip()
+        
+#         data = {'img_url': big_img, 'title': title}
+        
+#         return data
 
 if __name__ == "__main__":
     # if it's running as a script, then print the scraped data
