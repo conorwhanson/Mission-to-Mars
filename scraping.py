@@ -83,9 +83,9 @@ def featured_image(browser):
         return None
 
     # url above is only partial; need to add it onto the base url and save it as a variable
-    img_url = f"https://spaceimages-mars.com/{img_url_rel}"
+    feat_img_url = f"https://spaceimages-mars.com/{img_url_rel}"
 
-    return img_url
+    return feat_img_url
 
 def mars_facts():
     # ## Mars Facts
@@ -114,6 +114,7 @@ def hemi_data(browser):
     hemispheres = []
 
     for item in hemi:
+        # find the url of the img, tag onto full url and visit it
         link = item.find('a', {'class':'itemLink'})['href']
         full_url = url+link
         browser.visit(full_url)
