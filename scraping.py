@@ -101,7 +101,7 @@ def mars_facts():
     df.set_index('Description', inplace=True)
 
     # turn the pulled table back into HTML for coding
-    return df.to_html()
+    return df.to_html(classes="table table-bordered table-hover", index=False)
 
 def hemi_data(browser):
 
