@@ -109,7 +109,6 @@ def hemi_data(browser):
     browser.visit(url)
     html = browser.html
     hemi_soup = soup(html, 'html.parser')
-    hemi = hemi_soup.find('div', {'class':'results'}).find_all('div', {'class','item'})
 
     hemispheres = []
 
